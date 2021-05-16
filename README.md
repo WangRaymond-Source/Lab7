@@ -1,3 +1,3 @@
 # Lab7_Solution
 # Author: Raymond Wang
-Link
+(https://wangraymond-source.github.io/Lab7/)

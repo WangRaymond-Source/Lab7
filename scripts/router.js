@@ -1,12 +1,13 @@
 // router.js
 let home = window.location.origin + '/';
+console.log("this one: " + home);
 let settingsURL = window.location.origin + '/#settings';
 export const router = {};
 //console.log(settingsURL);
 /**
  * Changes the "page" (state) that your SPA app is currently set to
  */
-router.setState = function(state) {
+router.setState = function(URL,state) {
   /**
    * - There are three states that your SPA app will have
    *    1. The home page
@@ -36,14 +37,28 @@ router.setState = function(state) {
    *    1. You may add as many helper functions in this file as you like
    *    2. You may modify the parameters of setState() as much as you like
    */
-   
-   if(state == home){
+   if(URL == home){
      homePage();
-   }else if(state == settingsURL){
+   }else if(URL == settingsURL){
      settingsPage();
    }else{
-     
+     helperEntry(state);
    }
+}
+function helperEntry(entryState){
+  //remove entry-page
+  document.querySelector('body').removeChild(document.querySelector('entry-page'));
+  //add the entry-page back
+  let addEntryPage = document.createElement('entry-page');
+  document.querySelector('body').appendChild(addEntryPage);
+  //entry-Page element
+  let entryPage = document.querySelector('entry-page');
+  //append the entry details to entry page
+  entryPage.entry = entryState;
+  //change the header name
+  document.querySelector('h1').textContent = "Entry " + entryState.id;
+  //append it to the class ----> single-entry
+  document.body.className = "single-entry";
 }
 function homePage(){
   //change header tag

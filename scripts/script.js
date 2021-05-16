@@ -15,6 +15,7 @@ document.addEventListener('DOMContentLoaded', () => {
         document.querySelector('main').appendChild(newPost);
         //id each entry 
         newPost.setAttribute('id', entryCount);
+        newPost.className = entryCount;
         entryCount++;
        
         //add event listener to each entry
@@ -24,18 +25,19 @@ document.addEventListener('DOMContentLoaded', () => {
           //add the entry-page back
           let addEntryPage = document.createElement('entry-page');
           document.querySelector('body').appendChild(addEntryPage);
-
+          
           //entry-Page element
           let entryPage = document.querySelector('entry-page');
           //append the entry details to entry page
           entryPage.entry = entry;
+          //set entry id
+          entry.id = newPost.getAttribute('id');
           //change the header name
           document.querySelector('h1').textContent = "Entry " + newPost.getAttribute('id');
           //append it to the class ----> single-entry
           document.body.className = "single-entry";
           //set state
-          history.pushState({}, "", "#entry" + newPost.getAttribute('id'));
-        
+          history.pushState(entry, "", "#entry" + newPost.getAttribute('id'));
         });
       });
     });
@@ -47,7 +49,7 @@ headerTag.addEventListener('click' , () => {
   document.querySelector('h1').textContent = "Journal Entries";
   document.body.removeAttribute('class');
   //set state
-  history.pushState({}, "", "/");
+  history.pushState({}, "", "");
 });
 
 //if settings button is being clicked
@@ -62,11 +64,11 @@ settingButton.addEventListener('click',() =>{
 });
 //event when user click back or forward
 window.addEventListener('popstate', (event) =>{
-  router.setState(window.location.href);
-  console.log("click");
+  router.setState(window.location.href, event.state);
+  
 });
 
-
+//back/forward button for entry#
 
 
 
