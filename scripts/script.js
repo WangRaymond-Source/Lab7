@@ -61,7 +61,7 @@ settingButton.addEventListener('click',() =>{
   history.pushState({}, "", "#settings");
 });
 //event when user click back or forward
-window.addEventListener('popstate', () =>{
+window.addEventListener('popstate', (event) =>{
   router.setState(window.location.href);
   console.log("click");
 });
