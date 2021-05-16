@@ -65,7 +65,7 @@ window.addEventListener('popstate', () =>{
   router.setState(window.location.href);
   console.log("click");
 });
-console.log();
+
 
 
 
