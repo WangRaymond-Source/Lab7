@@ -6,6 +6,7 @@ var entryCount = 1;
 // Make sure you register your service worker here too
 
 document.addEventListener('DOMContentLoaded', () => {
+  router.setState(""," ");
   fetch('https://cse110lab6.herokuapp.com/entries')
     .then(response => response.json())
     .then(entries => {
