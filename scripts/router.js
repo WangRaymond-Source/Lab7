@@ -36,13 +36,14 @@ router.setState = function(state, name) {
    *    1. You may add as many helper functions in this file as you like
    *    2. You may modify the parameters of setState() as much as you like
    */
-   if(name != "" && name != "#settings"){
+   if(name != "/" && name != "#settings"){
       history.pushState(state,'', "#entry" + state.id);
    }else{
       history.pushState(state,'', name );
    }
 }
 router.getState = function(URL,state){
+  console.log(URL);
   if(URL == home){
     homePage();
   }else if(URL == settingsURL){
