@@ -1,6 +1,5 @@
 // router.js
-let home = window.location.origin + '/';
-console.log("this one: " + home);
+let home = window.location.origin + '/Lab7';
 let settingsURL = window.location.origin + '/#settings';
 export const router = {};
 //console.log(settingsURL);
@@ -71,7 +70,6 @@ function homePage(){
   //change header tag
   document.querySelector('h1').textContent = "Journal Entries";
   document.body.removeAttribute('class');
-  console.log("home");
 }
 function settingsPage(){
   //change header tag
