@@ -66,7 +66,7 @@ settingButton.addEventListener('click',() =>{
 window.addEventListener('popstate', (event) =>{
   router.getState(window.location.href, event.state);
 });
-
+console.log(window.location.href);
 //back/forward button for entry#
 
 
