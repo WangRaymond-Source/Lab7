@@ -1,7 +1,8 @@
 // router.js
-let home = window.location.href ;
-console.log(home);
-let settingsURL = window.location.href + '/#settings';
+// let home = window.location.href ;
+
+// let settingsURL = window.location.href + '/#settings';
+// console.log(settingsURL);
 export const router = {};
 //console.log(settingsURL);
 /**
@@ -37,7 +38,7 @@ router.setState = function(state, name) {
    *    1. You may add as many helper functions in this file as you like
    *    2. You may modify the parameters of setState() as much as you like
    */
-   if(name != "" && name != "#settings"){
+   if(name != " " && name != "#settings"){
       history.pushState(state,'', "#entry" + state.id);
    }else{
       history.pushState(state,'', name );
@@ -45,9 +46,9 @@ router.setState = function(state, name) {
 }
 router.getState = function(URL,state){
   
-  if(URL == home){
+  if(URL.charAt(URL.length - 1) == "/" ){
     homePage();
-  }else if(URL == settingsURL){
+  }else if(URL.charAt(URL.length - 1) == "s"){
     settingsPage();
   }else{
     helperEntry(state);
