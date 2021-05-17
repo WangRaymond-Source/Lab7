@@ -43,7 +43,7 @@ router.setState = function(state, name) {
    }
 }
 router.getState = function(URL,state){
-  console.log(URL);
+  
   if(URL == home){
     homePage();
   }else if(URL == settingsURL){
