@@ -46,7 +46,7 @@ router.setState = function(state, name) {
 }
 router.getState = function(URL,state){
   
-  if(URL.charAt(URL.length - 1) == "/" ){
+  if(URL.charAt(URL.length - 1) == "/" || URL.charAt(URL.length - 1) == " " ){
     homePage();
   }else if(URL.charAt(URL.length - 1) == "s"){
     settingsPage();
