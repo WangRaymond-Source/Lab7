@@ -1,8 +1,5 @@
 // router.js
-// let home = window.location.href ;
 
-// let settingsURL = window.location.href + '/#settings';
-// console.log(settingsURL);
 export const router = {};
 //console.log(settingsURL);
 /**
