@@ -37,7 +37,7 @@ document.addEventListener('DOMContentLoaded', () => {
           //append it to the class ----> single-entry
           document.body.className = "single-entry";
           //set state
-          history.pushState(entry, "", "#entry" + newPost.getAttribute('id'));
+          router.setState(entry);
         });
       });
     });
@@ -49,7 +49,7 @@ headerTag.addEventListener('click' , () => {
   document.querySelector('h1').textContent = "Journal Entries";
   document.body.removeAttribute('class');
   //set state
-  history.pushState({}, "", "");
+  router.setState("","");
 });
 
 //if settings button is being clicked
@@ -60,12 +60,11 @@ settingButton.addEventListener('click',() =>{
   //append it to the class ---> settings in css
   document.body.className = "settings";
   //set state
-  history.pushState({}, "", "#settings");
+  router.setState("","#settings");
 });
 //event when user click back or forward
 window.addEventListener('popstate', (event) =>{
-  router.setState(window.location.href, event.state);
-  
+  router.getState(window.location.href, event.state);
 });
 
 //back/forward button for entry#
