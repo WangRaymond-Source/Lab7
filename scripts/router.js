@@ -1,6 +1,7 @@
 // router.js
-let home = window.location.origin + '/';
-let settingsURL = window.location.origin + '/#settings';
+let home = window.location.href ;
+console.log(home);
+let settingsURL = window.location.href + '/#settings';
 export const router = {};
 //console.log(settingsURL);
 /**
@@ -36,7 +37,7 @@ router.setState = function(state, name) {
    *    1. You may add as many helper functions in this file as you like
    *    2. You may modify the parameters of setState() as much as you like
    */
-   if(name != "/" && name != "#settings"){
+   if(name != "" && name != "#settings"){
       history.pushState(state,'', "#entry" + state.id);
    }else{
       history.pushState(state,'', name );

@@ -49,7 +49,7 @@ headerTag.addEventListener('click' , () => {
   document.querySelector('h1').textContent = "Journal Entries";
   document.body.removeAttribute('class');
   //set state
-  router.setState("","/");
+  router.setState(""," ");
 });
 
 //if settings button is being clicked
